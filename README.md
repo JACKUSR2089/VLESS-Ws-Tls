@@ -20,9 +20,9 @@ V2Ray 基于 Nginx 的 vless+ws+tls 一键安装脚本
 
 VLESS+Ws+Tls 一键安装脚本
                                  
-
+```
 wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/dev/install.sh" && chmod +x install.sh && bash install.sh
-
+```
 注意事项
 
     如果你不了解脚本中各项设置的具体含义，除域名外，请使用脚本提供的默认值
