@@ -29,6 +29,7 @@ systemctl restart firewalld.service #重启防火墙
 firewall-cmd --reload #重新载入配置
 ```
 
+
 （2）如果你是 Debian/Ubuntu 系统，则依次执行以下命令：
 ```
 apt-get install iptables #安装iptables
