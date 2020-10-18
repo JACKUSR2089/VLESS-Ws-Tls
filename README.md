@@ -1,23 +1,25 @@
-V2Ray 基于 Nginx 的 vmess+ws+tls 一键安装脚本
+V2Ray 基于 Nginx 的 vless+ws+tls 一键安装脚本
 
     感谢 JetBrains 提供的非商业开源软件开发授权
 
     Thanks for non-commercial open source development authorization by JetBrains
 
-Telegram 群组
 
-    telegram 交流群:https://t.me/wulabing_v2ray
-    telegram 更新公告频道：https://t.me/wulabing_channel
 
 准备工作
 
     准备一个域名，并将A记录添加好。
     V2ray官方说明，了解 TLS WebSocket 及 V2ray 相关信息
     安装好 wget
+    此脚本 git 环境需要自己安装，不然伪装网站无法正常拉取！脚本并未集成该命令，安装命令如下
+    
+1 #  yum install -y git  #CentOS安装命令
+2 #  apt install -y git  #Debian安装命令
 
 安装/更新方式（h2 和 ws 版本已合并）
 
-Vless+websocket+TLS+Nginx+Website
+VLESS+Ws+Tls 一键安装脚本
+                                 
 
 wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/dev/install.sh" && chmod +x install.sh && bash install.sh
 
@@ -90,12 +92,31 @@ V2ray 客户端配置: ~/v2ray_info.inf
 Nginx 目录： /etc/nginx
 
 证书文件: /data/v2ray.key 和 /data/v2ray.crt 请注意证书权限设置
+
+
+
 捐赠
 
-目前支持通过 MugglePay 接受虚拟货币捐赠
+目前支持通过 捐赠
 
-𝒘𝒖𝒍𝒂𝒃𝒊𝒏𝒈 邀请您使用麻瓜宝，基于Telegram的电子钱包，匿名支付0手续费秒级到账。https://telegram.me/MugglePayBot?start=T3Y78AZ3
 
-您可以通过Telegram向我匿名捐赠：发送 /pay @wulabing xxx 到 @MugglePayBot 即可 默认货币为 USDT
+（截止到2020年8月15日）
 
-如需要通过支付宝/微信捐赠，请Telegram私聊 @wulabing 感谢您的支持
+图形客户端
+V2RayNG   
+V2RayNG 是一个基于 V2Ray 内核的 Android 应用，它可以创建基于 VMess 的 VPN 连接。
+
+V2rayN   
+V2RayN 是一个基于 V2Ray 内核的 Windows 客户端。
+
+V2rayU   
+V2rayU，基于 V2Ray 核心的 macOS 客户端，使用 Swift 4.2 编写，支持 VMess、Shadowsocks、SOCKS5 等服务协议，支持订阅，支持二维码、剪贴板导入、手动配置、二维码分享等。
+
+Qv2ray   
+跨平台 V2Ray 客户端，支持 Linux、Windows、macOS，可通过插件系统支持 SSR / Trojan / Trojan-Go / NaiveProxy 等协议，不支持批量测速，不支持自动更新，不建议小白使用
+
+支持VLESS软路由插件
+（截止到2020年8月15日）
+
+PassWall
+PassWall（v3.9.35+），支持 OpenWRT
