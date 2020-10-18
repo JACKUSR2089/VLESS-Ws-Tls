@@ -20,13 +20,13 @@ vless目前没有加密，所以目前使用vless最安全的办法就是借用T
 
 安装/更新方式（h2 和 ws 版本已合并）
 
-VLESS+Ws+Tls 一键安装脚本1
+#   VLESS+Ws+Tls 一键安装脚本1
                                  
 ```
 wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/dev/install.sh" && chmod +x install.sh && bash install.sh
 ```
 
-VLESS+Ws+Tls 一键安装脚本2
+#   VLESS+Ws+Tls 一键安装脚本2
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/atrandys/v2ray-ws-tls/master/vless_tcp_tls.sh)
 ```
