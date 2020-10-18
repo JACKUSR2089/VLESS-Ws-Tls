@@ -14,11 +14,44 @@ vless目前没有加密，所以目前使用vless最安全的办法就是借用T
     安装好 wget
     此脚本 git 环境需要自己安装，不然伪装网站无法正常拉取！脚本并未集成该命令，安装命令如下
     
- #  yum install -y git  #CentOS安装命令
+    
+2、放行VPS服务器端口
+在执行VLESS一键安装脚本之前，我们必须在防火墙放行你要开启的服务器端口（我这里以80/443端口为例），否则安装SSL证书会失败。请提前检查你的VPS服务器是否已经放行了你要开放的端口，否则请执行以下操作命令
+    
+  （1）如果你是 CentOS/Fedora/RedHat 系统，则依次执行以下命令：
 
- #  apt install -y git  #Debian安装命令
+```
+firewall-cmd --query-port=端口号/tcp #查看“端口号”是否放行
+systemctl start firewalld.service #开启防火墙
+firewall-cmd --zone=public --add-port=80/tcp --permanent #放行80端口
+firewall-cmd --zone=public --add-port=443/tcp --permanent #放行443端口
+systemctl restart firewalld.service #重启防火墙
+firewall-cmd --reload #重新载入配置
+```
+
+（2）如果你是 Debian/Ubuntu 系统，则依次执行以下命令：
+```
+apt-get install iptables #安装iptables
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT #放行80端口
+iptables -I INPUT -p tcp --dport 443 -j ACCEPT #放行443端口
+iptables-save #保存规则
+apt-get install iptables-persistent #安装iptables-persistent
+netfilter-persistent save
+netfilter-persistent reload
+``
+#（3）重启VPS服务器，执行命令：
+
+reboot
+
+#3、安装Git环境
+   yum install -y git  #CentOS安装命令
+
+   apt install -y git  #Debian安装命令
+   
 
 安装/更新方式（h2 和 ws 版本已合并）
+
+#4、执行VLESS一键安装脚本{2选一}
 
 #   VLESS+Ws+Tls 一键安装脚本1
                                  
