@@ -4,7 +4,8 @@ V2Ray 基于 Nginx 的 vless+ws+tls 一键安装脚本
 
     Thanks for non-commercial open source development authorization by JetBrains
 
-
+vless支持基于首包长度的分流fallback，可以将长度<18或认证失败或无效协议转发到指定地址，注意fallback只适用于TCP模式下，其他模式不可以有这个配置项，值为空也不可以（会报错）。
+vless目前没有加密，所以目前使用vless最安全的办法就是借用TLS加密通道，支持vless的v2ray core最低版本为4.27+，服务端需要更新版本，同时客户端也要去官网下载最新版本，官方release传送门。
 
 准备工作
 
@@ -13,8 +14,9 @@ V2Ray 基于 Nginx 的 vless+ws+tls 一键安装脚本
     安装好 wget
     此脚本 git 环境需要自己安装，不然伪装网站无法正常拉取！脚本并未集成该命令，安装命令如下
     
-1 #  yum install -y git  #CentOS安装命令
-2 #  apt install -y git  #Debian安装命令
+ #  yum install -y git  #CentOS安装命令
+
+ #  apt install -y git  #Debian安装命令
 
 安装/更新方式（h2 和 ws 版本已合并）
 
